@@ -76,11 +76,11 @@ define :turnaround do |n, o|
   sleep 0.125
 end
 
-sleep 4
+#sleep 4
 
 #intro
 4.times do
-  riff :C2, :G1, :C2, :Eb2
+  riff :G1, :D1, :G1, :Bb1
 end
 
 #choruses
@@ -88,28 +88,27 @@ end
 12.times do
   
   2.times do
-    riff :C2, :G1, :C2, :Eb2
+    riff :G1, :D1, :G1, :Bb1
   end
   
-  riff :F2, :C2, :F2, :C2
+  riff :C1, :Bb1, :C1, :Bb1
   
-  riff :C2, :G1, :C2, :Eb2
+  riff :G1, :D1, :G1, :Bb1
   
   if one_in(2)
-    turnaround :G1, :F1
+    turnaround :A1, :C1
   elsif one_in(2)
-    turnaround :Bb1, :F1
+    turnaround :F1, :C1
   else
-    turnaround :Bb1, :B1
+    turnaround :F1, :Gb1
   end
   
-  riff :C2, :G1, :C2, :Eb2
+  riff :G1, :D1, :G1, :Bb1
   
 end
 
 #outro
 4.times do
-  riff :C2, :G1, :C2, :Eb2
+  riff :G1, :D1, :G1, :D1
 end
-
 
