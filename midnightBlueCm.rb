@@ -27,13 +27,13 @@ define :riff do |n, o, p, q|
   end
   sample :bd_808
   sleep 0.75
-  sample :bd_ada, amp: 0.5
+  sample :elec_tick, amp: 0.5
   sleep 0.75
-  sample :bd_ada, amp: 0.5
+  sample :elec_tick, amp: 0.5
   sleep 0.5
-  sample :bd_ada, amp: 0.5
+  sample :elec_tick, amp: 0.5
   sleep 0.75
-  sample :bd_ada, amp: 0.5
+  sample :elec_tick, amp: 0.5
   sleep 0.75
   sample :bd_808
   sleep 0.5
@@ -42,41 +42,49 @@ end
 define :turnaround do |n, o|
   in_thread do
     use_synth :mod_fm
-    play n
+    play n, amp: 0.25
     sleep 0.75
-    play n
+    play n, amp: 0.25
     sleep 0.75
-    play n
+    play n, amp: 0.25
     sleep 0.50
     #
     sleep 0.25
-    play o
+    play o, amp: 0.25
     sleep 0.5
-    play o
+    play o, amp: 0.25
     sleep 0.25
     use_synth :mod_sine
     play o
     sleep 0.5
   end
-  sample :bd_ada, amp: 0.5
+  sample :bd_ada, amp: 0.25
   sleep 0.75
-  sample :bd_ada, amp: 0.5
+  sample :elec_tick, amp: 0.75
   sleep 0.75
-  sample :bd_ada, amp: 0.5
+  if one_in(2)
+    sample :bd_ada, amp: 0.25
+  else
+    sample :elec_tick, amp: 0.75
+  end
   sleep 0.5
-  sample :bd_ada, amp: 0.5
+  sample :elec_tick, amp: 0.75
   sleep 0.75
-  sample :bd_ada, amp: 0.5
+  if one_in(2)
+    sample :bd_ada, amp: 0.25
+  else
+    sample :elec_tick, amp: 0.75
+  end
   sleep 0.75
-  sample :bd_ada, amp: 0.5
+  sample :elec_tick, amp: 0.75
   sleep 0.25
-  sample :bd_ada, amp: 0.5
+  sample :elec_tick, amp: 0.75
   sleep 0.125
-  sample :bd_ada, amp: 0.5
+  sample :elec_tick, amp: 0.75
   sleep 0.125
 end
 
-#sleep 4
+sleep 4
 
 #intro
 4.times do
